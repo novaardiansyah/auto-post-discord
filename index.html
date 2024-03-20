@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Post Discord</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #1e1e1e;
+      /* Tema gelap */
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #333;
+      /* Warna latar belakang card */
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #messageStatus {
+      margin-bottom: 20px;
+      overflow-y: auto;
+      max-height: 150px;
+      /* Batas tinggi untuk pesan sukses */
+    }
+
+    #timer {
+      font-size: 2em;
+      /* Perbesar font timer */
+    }
+
+    .success-counter {
+      color: #27ae60;
+      /* Warna untuk counter sukses */
+    }
+
+    .error-counter {
+      color: #c0392b;
+      /* Warna untuk counter error */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="mb-4">Auto Post Discord</h1>
+      <div id="messageStatus"></div>
+      <p id="timer">10:00</p>
+    </div>
+  </div>
+
+  <script>
+    const interval_minutes = 10;
+    const channel_id = '1168221495147892816';
+    // const channel_id = '1203388623160873020'; // testing
+    let successCounter = 0; // Inisialisasi counter sukses
+    let errorCounter = 0; // Inisialisasi counter error
+    let timerInterval; // Variable untuk menyimpan interval timer
+
+    const today = new Date();
+    const options = { timeZone: 'Asia/Jakarta' };
+    const day = today.toLocaleString('default', { day: 'numeric', timeZone: 'Asia/Jakarta' });
+    const month = today.toLocaleString('default', { month: 'long', timeZone: 'Asia/Jakarta' });
+    const year = today.toLocaleString('default', { year: 'numeric', timeZone: 'Asia/Jakarta' });
+    
+    const currentDate = `${month} ${day}, ${year}`;
+
+    function send_message() {
+      const messageStatus = document.getElementById('messageStatus');
+      const statusMessage = document.createElement('p');
+      statusMessage.classList.add('mb-0'); // Tambahkan margin bawah pada setiap pesan
+
+      statusMessage.innerHTML = 'Sending message...';
+      messageStatus.insertBefore(statusMessage, messageStatus.firstChild); // Tambahkan pesan baru di bagian atas
+
+      clearInterval(timerInterval); // Bersihkan interval sebelumnya
+
+      updateTimer(interval_minutes * 60);
+
+      const payload = JSON.stringify({
+        content: `
+==========================
+# :free: FREE BFG POG
+# >> :star2:VALENBFG:star2: <<
+> - ALWAYS PTHT
+> - UNLIMITED STOCK
+> - VIP ROOM AVAILABLE
+> - CHEAP LRAY, RAYMAN, LSS
+> - CHEAP UWS, ARROZ, CLOVER
+> - CHEAP OTHER ITEMS
+> - ${currentDate} - FULL STOCK
+# >> :star2:VALENBFG:star2: << 
+# :free: FREE BFG POG
+=========================
+  
+**--------------------
+Auto Post By @Toy
+--------------------**
+        `
+      });
+
+      const url = `https://discord.com/api/v9/channels/${channel_id}/messages`;
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'ODk4NDA2MTA1NzYyMzk4MjM5.GOZ4Bh.Ys_COMmQus6EovL_B9qstCbWJm99XjxT5pLR2U'
+      };
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', url, true);
+      Object.keys(headers).forEach(key => xhr.setRequestHeader(key, headers[key]));
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            successCounter++; // Tambahkan counter sukses
+            statusMessage.innerHTML = `Successfully sent to discord (#${successCounter})`;
+            statusMessage.classList.add('success-counter'); // Tambahkan kelas untuk warna sukses
+          } else {
+            errorCounter++; // Tambahkan counter error
+            statusMessage.innerHTML = `Error sending message: ${xhr.status} (#${errorCounter})`;
+            statusMessage.classList.add('error-counter'); // Tambahkan kelas untuk warna error
+          }
+        }
+      };
+
+      xhr.send(payload);
+    }
+
+    function updateTimer(duration) {
+      let timerElement = document.getElementById('timer');
+      let timer = duration;
+      timerInterval = setInterval(function () { // Simpan interval ke dalam variable
+        const minutes = parseInt(timer / 60, 10);
+        let seconds = parseInt(timer % 60, 10);
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        timerElement.innerHTML = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 1000);
+    }
+
+    send_message(); // Mengirim pesan pertama kali
+
+    setInterval(() => {
+      send_message(); // Mengirim pesan secara berkala
+    }, (interval_minutes * 60 + 30) * 1000); // Interval diatur dengan menambahkan waktu tidur di akhir interval
+  </script>
+
+</body>
+
+</html>
