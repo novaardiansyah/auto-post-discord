@@ -68,15 +68,15 @@
     let errorCounter = 0; // Inisialisasi counter error
     let timerInterval; // Variable untuk menyimpan interval timer
 
-    const today = new Date();
-    const options = { timeZone: 'Asia/Jakarta' };
-    const day = today.toLocaleString('default', { day: 'numeric', timeZone: 'Asia/Jakarta' });
-    const month = today.toLocaleString('default', { month: 'long', timeZone: 'Asia/Jakarta' });
-    const year = today.toLocaleString('default', { year: 'numeric', timeZone: 'Asia/Jakarta' });
-    
-    const currentDate = `${month} ${day}, ${year}`;
-
     function send_message() {
+      const today = new Date();
+      const options = { timeZone: 'Asia/Jakarta' };
+      const day = today.toLocaleString('default', { day: 'numeric', timeZone: 'Asia/Jakarta' });
+      const month = today.toLocaleString('default', { month: 'long', timeZone: 'Asia/Jakarta' });
+      const year = today.toLocaleString('default', { year: 'numeric', timeZone: 'Asia/Jakarta' });
+      
+      const currentDate = `${month}, ${day}`;
+
       const messageStatus = document.getElementById('messageStatus');
       const statusMessage = document.createElement('p');
       statusMessage.classList.add('mb-0'); // Tambahkan margin bawah pada setiap pesan
@@ -91,22 +91,24 @@
       const payload = JSON.stringify({
         content: `
 ==========================
-# :free: FREE BFG POG
-# >> :star2:VALENBFG:star2: <<
-> - ALWAYS PTHT
-> - UNLIMITED STOCK
-> - VIP ROOM AVAILABLE
-> - CHEAP LRAY, RAYMAN, LSS
-> - CHEAP UWS, ARROZ, CLOVER
-> - CHEAP OTHER ITEMS
-> - ${currentDate} - FULL STOCK
-# >> :star2:VALENBFG:star2: << 
-# :free: FREE BFG POG
+# <:pog:1220391715442004039> FREE BFG POG <:pog:1220391715442004039>
+# <a:bluestarrr:990956962776768532> VALENBFG <a:bluestarrr:990956962776768532>
+> <a:arrow:1098931051046379611>ALWAYS PTHT
+> <a:arrow:1098931051046379611>UNLIMITED STOCK
+> <a:arrow:1098931051046379611>VIP ROOM AVAILABLE
+> <a:arrow:1098931051046379611>CHEAP LRAY, RAYMAN, LSS
+> <a:arrow:1098931051046379611>CHEAP UWS, ARROZ, CLOVER
+> <a:arrow:1098931051046379611>CHEAP OTHER ITEMS
+> <a:arrow:1098931051046379611>*${currentDate}* - FULL STOCK
+# <a:bluestarrr:990956962776768532> VALENBFG <a:bluestarrr:990956962776768532>
+# <:pog:1220391715442004039> FREE BFG POG <:pog:1220391715442004039>
 =========================
-  
-**--------------------
-Auto Post By @Toy
---------------------**
+
+<a:Arrow2:1160862637706444921>  ***ALSO CHEAP  <a:shinybgl:1101039551142703224>  DM <@898406105762398239>***
+
+**-----------------------
+      Auto Post By @Toy
+-----------------------**
         `
       });
 
