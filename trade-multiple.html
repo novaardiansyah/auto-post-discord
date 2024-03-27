@@ -54,9 +54,9 @@
           { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 60 },
           // { channel_id: '1202877392624820285', name: 'Toy - Marketplace', delayMinutes: 61 },
           { channel_id: '1130967592232820827', name: 'CPS Server', delayMinutes: 11 },
-          { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 90 },
-          { channel_id: '1208601553552801812', name: 'Kfn Cp', delayMinutes: 90},
-          { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 90}
+          { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 60 },
+          { channel_id: '1208601553552801812', name: 'Kfn Cp', delayMinutes: 30},
+          { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 60}
         ];
       
         let successCounter = {}; // Object untuk menyimpan counter sukses
@@ -74,24 +74,28 @@
       
           const payload = JSON.stringify({
             content: `
-              > # <a:love:1157295531396173864> TOY STORE <a:love:1157295531396173864>
-              > # BUY? DM <@898406105762398239>
-              > # <a:aestheticheart:729863572125122590> SELLING <a:aestheticheart:729863572125122590> 
-              > **<a:kanan8:1194241536871895091> SELL <a:shinybgll:1159140074244546683> RATE BARU !! **
-              > **<a:kanan8:1194241536871895091> SELL <a:shinybgl:1137213838513688576> RATE BARU !! **
-              > **<a:kanan8:1194241536871895091> SELL <:Mray:1140501066811703366> 40.000 **
-              > **<a:kanan8:1194241536871895091> SELL <a:igl:1135617667315802193> 14.000 **
-              > **<a:kanan8:1194241536871895091> SELL <:lray:1117141975532060763> 2.000 **
-              > # <a:aestheticheart:729863572125122590> BUYING <a:aestheticheart:729863572125122590> 
-              > **<a:kanan8:1194241536871895091> BUY TONS <a:shinybgll:1159140074244546683> RATE DM !! **
-              > **<a:kanan8:1194241536871895091> BUY TONS <a:shinybgl:1137213838513688576> RATE DM !! **
-              > # <a:aestheticheart:729863572125122590> PAYMENT <a:aestheticheart:729863572125122590> 
-              > **<a:kanan8:1194241536871895091> <:dana:1141687721736278066> DANA **
-              > **<a:kanan8:1194241536871895091> 🏦 BANK **
-              > **<a:kanan8:1194241536871895091> <:qris:1141687984551362660> QRIS [ALL PAYMENT NO TAX] **
-              > # BUY? DM <@898406105762398239> 
-              > **ROLE GOD MAX <:god:1216550066626760784>**
-              > **FAST TRANSFER, FAST SEND, AND SAFE <a:verified:1176176963195510905>**
+              > # <a:flash29:1222666884399497338>TOY STORE<a:flash29:1222666884399497338> 
+              > ----------------------------
+              > # BUY? DM <@898406105762398239> <a:trustedseller:1222187904348983448> 
+              > ## <a:estrela88:1222670967957094400> SELL LIST  <a:estrela88:1222670967957094400> 
+              > ** <a:arrow:1098931051046379611>SELL <a:shinybgll:1159140074244546683> PASTI MURAH, RATE DM !! **
+              > ** <a:arrow:1098931051046379611>SELL <a:shinybgl:1137213838513688576> PASTI MURAH, RATE DM !! **
+              > ** <a:arrow:1098931051046379611>SELL <:Mray:1140501066811703366> IDR. 40.000 **
+              > ** <a:arrow:1098931051046379611>SELL <a:igl:1135617667315802193> IDR. 14.000 **
+              > ** <a:arrow:1098931051046379611>SELL <:lray:1117141975532060763> IDR. 3.000 **
+              > # <a:estrela88:1222670967957094400> BUY LIST <a:estrela88:1222670967957094400> 
+              > ** <a:arrow:1098931051046379611> BUY TONS <a:shinybgll:1159140074244546683> RATE TINGGI, DM !! **
+              > ** <a:arrow:1098931051046379611> BUY TONS <a:shinybgl:1137213838513688576> RATE TINGGI, DM !! **
+              > # <a:estrela88:1222670967957094400> PAYMENT <a:estrela88:1222670967957094400> 
+              > ** <a:arrow:1098931051046379611> <:dana:1141687721736278066> DANA / <:gopay:1117142067819315250> GOPAY / <:shopeepay:1037736409773133864> SHOPEE PAY**
+              > ** <a:arrow:1098931051046379611> 🏦 BANK / <:qris:1141687984551362660> QRIS [ALL PAYMENT NO TAX]**
+              > # BUY? DM <@898406105762398239> <a:trustedseller:1222187904348983448>
+              > **<a:arrow:1098931051046379611> IDR PAYMENT ONLY <a:indo:1213790198123470848> **
+              > **<a:arrow:1098931051046379611> FAST RESPOND & DROP <a:verified:1176176963195510905>  **
+              > **<a:arrow:1098931051046379611> ROLE GOD MAX <:god:1216550066626760784>**
+              > # <a:flash29:1222666884399497338>TOY STORE<a:flash29:1222666884399497338>
+              > ----------------------------
+              > || Always giveaway, check my profile !! || <@898406105762398239>
             `
           });
       
