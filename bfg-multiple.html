@@ -43,7 +43,7 @@
   <body>
     <div class="container">
       <div class="card">
-        <h1 class="mb-2">Auto Post Trade</h1>
+        <h1 class="mb-2">Auto Post BFG</h1>
         <h6 class="mb-3" id="last_send">Last Sent: </h6>
         <div id="messageStatus"></div>
       </div>
@@ -51,18 +51,24 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const channels = [
-          { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 60 },
-          // { channel_id: '1202877392624820285', name: 'Toy - Marketplace', delayMinutes: 61 },
-          { channel_id: '1130967592232820827', name: 'CPS Server', delayMinutes: 11 },
-          { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 90 },
-          { channel_id: '1208601553552801812', name: 'Kfn Cp', delayMinutes: 90},
-          { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 90}
+          { channel_id: '1168221495147892816', name: 'CPS Server', delayMinutes: 11 },
+          { channel_id: '1130618922161405992', name: 'Buraa Cp', delayMinutes: 90 },
+          { channel_id: '1188892137903886356', name: 'Crap Cp', delayMinutes: 90 },
+          { channel_id: '1208601817756209233', name: 'Kfn Cp', delayMinutes: 90 }
         ];
       
         let successCounter = {}; // Object untuk menyimpan counter sukses
         let errorCounter = {}; // Object untuk menyimpan counter error
       
         function sendMessage(channel) {
+          const today = new Date();
+          const options = { timeZone: 'Asia/Jakarta' };
+          const day = today.toLocaleString('default', { day: 'numeric', timeZone: 'Asia/Jakarta' });
+          const month = today.toLocaleString('default', { month: 'long', timeZone: 'Asia/Jakarta' });
+          const year = today.toLocaleString('default', { year: 'numeric', timeZone: 'Asia/Jakarta' });
+          
+          const currentDate = `${month}, ${day}`;
+
           const messageStatus = document.getElementById('messageStatus');
           const statusMessage = document.createElement('p');
           statusMessage.classList.add('mb-0'); // Tambahkan margin bawah pada setiap pesan
@@ -74,24 +80,25 @@
       
           const payload = JSON.stringify({
             content: `
-              > # <a:love:1157295531396173864> TOY STORE <a:love:1157295531396173864>
-              > # BUY? DM <@898406105762398239>
-              > # <a:aestheticheart:729863572125122590> SELLING <a:aestheticheart:729863572125122590> 
-              > **<a:kanan8:1194241536871895091> SELL <a:shinybgll:1159140074244546683> RATE BARU !! **
-              > **<a:kanan8:1194241536871895091> SELL <a:shinybgl:1137213838513688576> RATE BARU !! **
-              > **<a:kanan8:1194241536871895091> SELL <:Mray:1140501066811703366> 40.000 **
-              > **<a:kanan8:1194241536871895091> SELL <a:igl:1135617667315802193> 14.000 **
-              > **<a:kanan8:1194241536871895091> SELL <:lray:1117141975532060763> 2.000 **
-              > # <a:aestheticheart:729863572125122590> BUYING <a:aestheticheart:729863572125122590> 
-              > **<a:kanan8:1194241536871895091> BUY TONS <a:shinybgll:1159140074244546683> RATE DM !! **
-              > **<a:kanan8:1194241536871895091> BUY TONS <a:shinybgl:1137213838513688576> RATE DM !! **
-              > # <a:aestheticheart:729863572125122590> PAYMENT <a:aestheticheart:729863572125122590> 
-              > **<a:kanan8:1194241536871895091> <:dana:1141687721736278066> DANA **
-              > **<a:kanan8:1194241536871895091> 🏦 BANK **
-              > **<a:kanan8:1194241536871895091> <:qris:1141687984551362660> QRIS [ALL PAYMENT NO TAX] **
-              > # BUY? DM <@898406105762398239> 
-              > **ROLE GOD MAX <:god:1216550066626760784>**
-              > **FAST TRANSFER, FAST SEND, AND SAFE <a:verified:1176176963195510905>**
+==========================
+# <:pog:1220391715442004039> FREE BFG POG <:pog:1220391715442004039>
+# <a:bluestarrr:990956962776768532> VALENBFG <a:bluestarrr:990956962776768532>
+> <a:arrow:1098931051046379611>ALWAYS PTHT
+> <a:arrow:1098931051046379611>UNLIMITED STOCK
+> <a:arrow:1098931051046379611>VIP ROOM AVAILABLE
+> <a:arrow:1098931051046379611>CHEAP LRAY, RAYMAN, LSS
+> <a:arrow:1098931051046379611>CHEAP UWS, ARROZ, CLOVER
+> <a:arrow:1098931051046379611>CHEAP OTHER ITEMS
+> <a:arrow:1098931051046379611>*${currentDate}* - FULL STOCK
+# <a:bluestarrr:990956962776768532> VALENBFG <a:bluestarrr:990956962776768532>
+# <:pog:1220391715442004039> FREE BFG POG <:pog:1220391715442004039>
+=========================
+
+<a:Arrow2:1160862637706444921>  ***ALSO CHEAP  <a:shinybgl:1101039551142703224>  DM <@898406105762398239>***
+
+**-----------------------
+      Auto Post By @Toy
+-----------------------**
             `
           });
       
