@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
       body {
-      background-color: #1e1e1e;
+        background-color: #1e1e1e;
         /* Tema gelap */
         color: #fff;
         height: 100vh;
@@ -43,7 +43,7 @@
   <body>
     <div class="container">
       <div class="card">
-        <h1 class="mb-2">Auto Post CC</h1>
+        <h1 class="mb-2">Auto Post Mod Trade</h1>
         <h6 class="mb-3" id="last_send">Last Sent: </h6>
         <div id="messageStatus"></div>
       </div>
@@ -51,12 +51,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const channels = [
-          { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 31 },
-          { channel_id: '1168221495147892816', name: 'CPS-Promote World', delayMinutes: 11 },
-          { channel_id: '1216776630966554714', name: 'CPS-Mod Trade', delayMinutes: 11 },
-          { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 121 },
-          { channel_id: '1208601553552801812', name: 'Kfn Cp', delayMinutes: 31 },
-          { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 61 }
+          { channel_id: '1216776630966554714', name: 'CPS-ModTrade', delayMinutes: 11 }
         ];
       
         let successCounter = {}; // Object untuk menyimpan counter sukses
@@ -72,40 +67,16 @@
           statusMessage.innerHTML = `Sending message to ${channel.name}... (Delay: ${delayText})`;
           messageStatus.insertBefore(statusMessage, messageStatus.firstChild); // Tambahkan pesan baru di bagian atas
       
-          payload = JSON.stringify({
+          const payload = JSON.stringify({
             content: `
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-
-<a:arrow:1098931051046379611>ALSO CHEAP  <a:shinybgll:1159140074244546683> DM RATE !!
-<a:arrow:1098931051046379611>IDR PAYMENT <a:indo:1213790198123470848> DM <@898406105762398239>
+> # <a:arrow:1098931051046379611> SELL <a:shinybgll:1159140074244546683> .6 HAVE TONS... BUY? 10+ <a:shinybgll:1159140074244546683> .55
+> # <a:arrow:1098931051046379611> IDR PAYMENT <a:indo:1213790198123470848> DM <@898406105762398239> 
 
 -----------------------
       Auto Post By @Toy
 -----------------------
             `
           });
-
-          if (channel.channel_id === '1216776630966554714') // ! Khusus Mod Trade
-          {
-            payload = JSON.stringify({
-              content: `
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-> # <a:flash29:1222666884399497338> CHEAP <:cccps:1124751544030593044> AT <a:arrowright23:1223316585519775835> 4G
-
-<a:arrow:1098931051046379611>SELL .6 <a:shinybgll:1159140074244546683> 
-<a:arrow:1098931051046379611>IDR PAYMENT <a:indo:1213790198123470848> DM <@898406105762398239>
-              `
-            });
-          }
       
           const url = `https://discord.com/api/v9/channels/${channel.channel_id}/messages`;
           const headers = {
