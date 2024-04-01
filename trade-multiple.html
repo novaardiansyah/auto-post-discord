@@ -54,8 +54,8 @@
           { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 31 },
           { channel_id: '1130967592232820827', name: 'CPS-Trade', delayMinutes: 11 },
           { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 61 },
-          { channel_id: '1208601553552801812', name: 'Kfn Cp', delayMinutes: 61},
-          { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 61 }
+          { channel_id: '1208601553552801812', name: 'Kfn Cp', delayMinutes: 31 },
+          { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 31 }
         ];
       
         let successCounter = {}; // Object untuk menyimpan counter sukses
@@ -83,6 +83,9 @@
 > ** <a:arrow:1098931051046379611>SELL <:Mray:1140501066811703366> IDR. 40.000 **
 > ** <a:arrow:1098931051046379611>SELL <a:igl:1135617667315802193> IDR. 14.000 **
 > ** <a:arrow:1098931051046379611>SELL <:lray:1117141975532060763> IDR. 3.000 **
+> ## <a:estrela88:1222670967957094400> BUY LIST <a:estrela88:1222670967957094400> 
+> ** <a:arrow:1098931051046379611> BUY TONS <a:shinybgll:1159140074244546683> RATE DM !! **
+> ** <a:arrow:1098931051046379611> BUY TONS <a:bglv2:1113663878690250832> RATE DM !! **
 > # <a:estrela88:1222670967957094400> PAYMENT <a:estrela88:1222670967957094400> 
 > ** <a:arrow:1098931051046379611> <:dana:1141687721736278066> DANA / <:gopay:1117142067819315250> GOPAY / <:shopeepay:1037736409773133864> SPAY**
 > ** <a:arrow:1098931051046379611> <:bankjago:1127858616314110023> JAGO / <:qris:1141687984551362660> QRIS [ALL PAYMENT NO TAX]**
@@ -113,10 +116,12 @@
                 statusMessage.innerHTML = `Successfully sent to <span style="color: #fff">${channel.name}</span> (Delay: ${delayText}) | <span style="color: #fff">x${successCounter[channel.channel_id]} times!</span>`;
                 statusMessage.classList.add('success-counter'); // Tambahkan kelas untuk warna sukses
                 updateLastSend(); // Memperbarui waktu terakhir pengiriman
+                send_report(false, `${channel.name}`, `${delayText}`, `${successCounter[channel.channel_id]}`)
               } else {
                 errorCounter[channel.channel_id] = (errorCounter[channel.channel_id] || 0) + 1; // Tambahkan counter error
                 statusMessage.innerHTML = `Error sending to <span style="color: #fff">${channel.name}</span> : ${xhr.status} (Delay: ${delayText}) | <span style="color: #fff">x${errorCounter[channel.channel_id]} times!</span>`;
                 statusMessage.classList.add('error-counter'); // Tambahkan kelas untuk warna error
+                send_report(false, `${channel.name}`, `${delayText}`, `${errorCounter[channel.channel_id]}`)
               }
             }
           };
@@ -124,6 +129,43 @@
           xhr.send(payload);
         }
       
+        function send_report(status, channel_name, delay, counter)
+        {
+          const channel = '1224492227078652014'
+          let payload = JSON.stringify({
+            content: `
+> ### <a:verified:1176176963195510905> Successfully sent to *${channel_name}* (Delay: ${delay}) | x${counter} times!
+> <a:arrow:1098931051046379611>report: *cc promote* <@898406105762398239>
+            `
+          }); 
+
+          if (status === false) {
+            payload = JSON.stringify({
+              content: `
+> ### <a:cross:1207285626257281034> Error sending to *${channel_name}* (Delay: ${delay}) | x${counter} times!
+> <a:arrow:1098931051046379611>report: *trade promote* <@898406105762398239>
+              `
+            })
+          }
+
+          const url = `https://discord.com/api/v9/channels/${channel}/messages`;
+
+          const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'ODk4NDA2MTA1NzYyMzk4MjM5.GOZ4Bh.Ys_COMmQus6EovL_B9qstCbWJm99XjxT5pLR2U'
+          };
+      
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', url, true);
+          Object.keys(headers).forEach(key => xhr.setRequestHeader(key, headers[key]));
+
+          xhr.onreadystatechange = function () {
+            // TODO:
+          };
+      
+          xhr.send(payload);
+        }
+
         function updateLastSend() {
           const lastSendElement = document.getElementById('last_send');
           const currentDate = new Date();
