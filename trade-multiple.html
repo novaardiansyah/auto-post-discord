@@ -51,8 +51,8 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const channels = [
-          { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 61 },
-          { channel_id: '1130967592232820827', name: 'CPS Server', delayMinutes: 11 },
+          { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 31 },
+          { channel_id: '1130967592232820827', name: 'CPS-Trade', delayMinutes: 11 },
           { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 61 },
           { channel_id: '1208601553552801812', name: 'Kfn Cp', delayMinutes: 61},
           { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 61 }
@@ -70,8 +70,8 @@
       
           statusMessage.innerHTML = `Sending message to ${channel.name}... (Delay: ${delayText})`;
           messageStatus.insertBefore(statusMessage, messageStatus.firstChild); // Tambahkan pesan baru di bagian atas
-      
-          const payload = JSON.stringify({
+          
+          let payload = JSON.stringify({
             content: `
 > # <a:flash29:1222666884399497338>TOY STORE<a:flash29:1222666884399497338> 
 > ----------------------------
@@ -79,13 +79,13 @@
 > ## <a:estrela88:1222670967957094400> SELL LIST  <a:estrela88:1222670967957094400> 
 > ** <a:arrow:1098931051046379611>SELL <a:shinybgll:1159140074244546683> PASTI MURAH, RATE DM !! **
 > ** <a:arrow:1098931051046379611>SELL <a:shinybgl:1137213838513688576> PASTI MURAH, RATE DM !! **
-> ** <a:arrow:1098931051046379611>SELL <:cccps:1124751544030593044> IDR. 16.000 /  VIA <a:bglv2:1113663878690250832> AT <a:arrowright23:1223316585519775835> 4G**
+> ** <a:arrow:1098931051046379611>SELL <:CC:1123873815341051936> IDR. 16.000 /  VIA <a:bglv2:1113663878690250832> AT <a:arrowright23:1223316585519775835> 4G**
 > ** <a:arrow:1098931051046379611>SELL <:Mray:1140501066811703366> IDR. 40.000 **
 > ** <a:arrow:1098931051046379611>SELL <a:igl:1135617667315802193> IDR. 14.000 **
 > ** <a:arrow:1098931051046379611>SELL <:lray:1117141975532060763> IDR. 3.000 **
 > # <a:estrela88:1222670967957094400> PAYMENT <a:estrela88:1222670967957094400> 
-> ** <a:arrow:1098931051046379611> <:dana:1141687721736278066> DANA / <:gopay:1117142067819315250> GOPAY / <:shopeepay:1037736409773133864> SHOPEE PAY**
-> ** <a:arrow:1098931051046379611> 🏦 BANK / <:qris:1141687984551362660> QRIS [ALL PAYMENT NO TAX]**
+> ** <a:arrow:1098931051046379611> <:dana:1141687721736278066> DANA / <:gopay:1117142067819315250> GOPAY / <:shopeepay:1037736409773133864> SPAY**
+> ** <a:arrow:1098931051046379611> <:bankjago:1127858616314110023> JAGO / <:qris:1141687984551362660> QRIS [ALL PAYMENT NO TAX]**
 > # BUY? DM <@898406105762398239> <a:trustedseller:1222187904348983448>
 > **<a:arrow:1098931051046379611> IDR PAYMENT ONLY <a:indo:1213790198123470848> **
 > **<a:arrow:1098931051046379611> FAST RESPOND & DROP <a:verified:1176176963195510905>  **

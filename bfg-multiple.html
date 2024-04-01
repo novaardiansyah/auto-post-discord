@@ -51,7 +51,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const channels = [
-          { channel_id: '1168221495147892816', name: 'CPS Server', delayMinutes: 11 },
+          // { channel_id: '1168221495147892816', name: 'CPS Server', delayMinutes: 11 },
           { channel_id: '1130618922161405992', name: 'Buraa Cp', delayMinutes: 61 },
           { channel_id: '1188892137903886356', name: 'Crap Cp', delayMinutes: 121 },
           { channel_id: '1208601817756209233', name: 'Kfn Cp', delayMinutes: 31 }
@@ -61,14 +61,6 @@
         let errorCounter = {}; // Object untuk menyimpan counter error
       
         function sendMessage(channel) {
-          const today = new Date();
-          const options = { timeZone: 'Asia/Jakarta' };
-          const day = today.toLocaleString('default', { day: 'numeric', timeZone: 'Asia/Jakarta' });
-          const month = today.toLocaleString('default', { month: 'long', timeZone: 'Asia/Jakarta' });
-          const year = today.toLocaleString('default', { year: 'numeric', timeZone: 'Asia/Jakarta' });
-          
-          const currentDate = `${month}, ${day}`;
-
           const messageStatus = document.getElementById('messageStatus');
           const statusMessage = document.createElement('p');
           statusMessage.classList.add('mb-0'); // Tambahkan margin bawah pada setiap pesan
