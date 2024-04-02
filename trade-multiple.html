@@ -50,6 +50,8 @@
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        const Authorization = `ODk4NDA2MTA1NzYyMzk4MjM5.GI5ryL.QK4rxoGZ1DcxTPKb30u896KBUh4sfP3pXet7II`
+
         const channels = [
           { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 31 },
           { channel_id: '1130967592232820827', name: 'CPS-Trade', delayMinutes: 11 },
@@ -102,7 +104,7 @@
           const url = `https://discord.com/api/v9/channels/${channel.channel_id}/messages`;
           const headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'ODk4NDA2MTA1NzYyMzk4MjM5.GOZ4Bh.Ys_COMmQus6EovL_B9qstCbWJm99XjxT5pLR2U'
+            'Authorization': Authorization
           };
       
           const xhr = new XMLHttpRequest();
@@ -116,7 +118,7 @@
                 statusMessage.innerHTML = `Successfully sent to <span style="color: #fff">${channel.name}</span> (Delay: ${delayText}) | <span style="color: #fff">x${successCounter[channel.channel_id]} times!</span>`;
                 statusMessage.classList.add('success-counter'); // Tambahkan kelas untuk warna sukses
                 updateLastSend(); // Memperbarui waktu terakhir pengiriman
-                send_report(false, `${channel.name}`, `${delayText}`, `${successCounter[channel.channel_id]}`)
+                send_report(true, `${channel.name}`, `${delayText}`, `${successCounter[channel.channel_id]}`)
               } else {
                 errorCounter[channel.channel_id] = (errorCounter[channel.channel_id] || 0) + 1; // Tambahkan counter error
                 statusMessage.innerHTML = `Error sending to <span style="color: #fff">${channel.name}</span> : ${xhr.status} (Delay: ${delayText}) | <span style="color: #fff">x${errorCounter[channel.channel_id]} times!</span>`;
@@ -152,7 +154,7 @@
 
           const headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'ODk4NDA2MTA1NzYyMzk4MjM5.GOZ4Bh.Ys_COMmQus6EovL_B9qstCbWJm99XjxT5pLR2U'
+            'Authorization': Authorization
           };
       
           const xhr = new XMLHttpRequest();

@@ -50,14 +50,16 @@
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        const Authorization = `ODk4NDA2MTA1NzYyMzk4MjM5.GI5ryL.QK4rxoGZ1DcxTPKb30u896KBUh4sfP3pXet7II`
+        
         const channels = [
           { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 31 },
           { channel_id: '1168221495147892816', name: 'CPS-Promote World', delayMinutes: 11 },
           { channel_id: '1180804302156087296', name: 'CPS-Ingame Trade', delayMinutes: 3 },
           { channel_id: '1216776630966554714', name: 'CPS-Mod Trade', delayMinutes: 11 },
-          { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 121 },
+          // { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 121 },
           { channel_id: '1208601817756209233', name: 'Kfn Cp', delayMinutes: 31 },
-          { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 61 }
+          // { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 61 }
         ];
       
         let successCounter = {}; // Object untuk menyimpan counter sukses
@@ -105,7 +107,7 @@
           const url = `https://discord.com/api/v9/channels/${channel.channel_id}/messages`;
           const headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'ODk4NDA2MTA1NzYyMzk4MjM5.GOZ4Bh.Ys_COMmQus6EovL_B9qstCbWJm99XjxT5pLR2U'
+            'Authorization': Authorization
           };
       
           const xhr = new XMLHttpRequest();
@@ -156,7 +158,7 @@
 
           const headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'ODk4NDA2MTA1NzYyMzk4MjM5.GOZ4Bh.Ys_COMmQus6EovL_B9qstCbWJm99XjxT5pLR2U'
+            'Authorization': Authorization
           };
       
           const xhr = new XMLHttpRequest();
