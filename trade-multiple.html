@@ -53,11 +53,12 @@
         const Authorization = `ODk4NDA2MTA1NzYyMzk4MjM5.GI5ryL.QK4rxoGZ1DcxTPKb30u896KBUh4sfP3pXet7II`
 
         const channels = [
-          { channel_id: '1222147024955244554', name: 'Toy Cp', delayMinutes: 31 },
+          { channel_id: '1222147024955244554', name: 'ToyCp', delayMinutes: 31 },
           { channel_id: '1130967592232820827', name: 'CPS-Trade', delayMinutes: 11 },
-          { channel_id: '1173287029606461560', name: 'Crap CP', delayMinutes: 61 },
-          { channel_id: '1208601553552801812', name: 'Kfn Cp', delayMinutes: 31 },
-          { channel_id: '1130618760655544380', name: 'Buraa Cp', delayMinutes: 31 }
+          { channel_id: '1173287029606461560', name: 'CrapCP-Buy Sell', delayMinutes: 31 },
+          { channel_id: '1208601553552801812', name: 'KfnCp', delayMinutes: 31 },
+          { channel_id: '1130618760655544380', name: 'BuraaCp', delayMinutes: 31 },
+          { channel_id: '1140403170267365517', name: 'GMart-CPS Lock', delayMinutes: 121 }
         ];
       
         let successCounter = {}; // Object untuk menyimpan counter sukses
@@ -79,27 +80,41 @@
 > ----------------------------
 > # BUY? DM <@898406105762398239> <a:trustedseller:1222187904348983448> 
 > ## <a:estrela88:1222670967957094400> SELL LIST  <a:estrela88:1222670967957094400> 
-> ** <a:arrow:1098931051046379611>SELL <a:shinybgll:1159140074244546683> PASTI MURAH, RATE DM !! **
-> ** <a:arrow:1098931051046379611>SELL <a:shinybgl:1137213838513688576> PASTI MURAH, RATE DM !! **
-> ** <a:arrow:1098931051046379611>SELL <:CC:1123873815341051936> IDR. 16.000 /  VIA <a:bglv2:1113663878690250832> AT <a:arrowright23:1223316585519775835> 4G**
-> ** <a:arrow:1098931051046379611>SELL <:Mray:1140501066811703366> IDR. 40.000 **
-> ** <a:arrow:1098931051046379611>SELL <a:igl:1135617667315802193> IDR. 14.000 **
-> ** <a:arrow:1098931051046379611>SELL <:lray:1117141975532060763> IDR. 3.000 **
+> ** <a:arrowright21:1224977661672030239>SELL <a:blackgemlock:1224009228822380565> PASTI MURAH, RATE DM !! **
+> ** <a:arrowright21:1224977661672030239>SELL <a:bluegemlock:1224010170439303290> PASTI MURAH, RATE DM !! **
+> ** <a:arrowright21:1224977661672030239>SELL <:creativecoin:1224009642179428503> IDR. 16.000 /  VIA <a:bglv2:1113663878690250832> AT <a:arrowright22:1224011662420345014> 4G**
+> ** <a:arrowright21:1224977661672030239>SELL <:mray:1224010387200933909> IDR. 40.000 **
+> ** <a:arrowright21:1224977661672030239>SELL <a:igl:1224011470061178992> IDR. 14.000 **
+> ** <a:arrowright21:1224977661672030239>SELL <:lray:1224010502443634719> IDR. 3.000 **
 > ## <a:estrela88:1222670967957094400> BUY LIST <a:estrela88:1222670967957094400> 
-> ** <a:arrow:1098931051046379611> BUY TONS <a:shinybgll:1159140074244546683> RATE DM !! **
-> ** <a:arrow:1098931051046379611> BUY TONS <a:bglv2:1113663878690250832> RATE DM !! **
+> ** <a:arrowright21:1224977661672030239> BUY TONS <a:blackgemlock:1224009228822380565> RATE DM !! **
+> ** <a:arrowright21:1224977661672030239> BUY TONS <a:bluegemlock:1224010170439303290> RATE DM !! **
 > # <a:estrela88:1222670967957094400> PAYMENT <a:estrela88:1222670967957094400> 
-> ** <a:arrow:1098931051046379611> <:dana:1141687721736278066> DANA / <:gopay:1117142067819315250> GOPAY / <:shopeepay:1037736409773133864> SPAY**
-> ** <a:arrow:1098931051046379611> <:bankjago:1127858616314110023> JAGO / <:qris:1141687984551362660> QRIS [ALL PAYMENT NO TAX]**
+> ** <a:arrowright21:1224977661672030239> <:dana:1224009791286935592> DANA / <:gopay:1224982994700210196> GOPAY / <:shopeepay:1224982990241665085> SPAY**
+> ** <a:arrowright21:1224977661672030239> <:jago:1224982992271708211> JAGO / <:qris2:1224861080962990163> QRIS [ALL PAYMENT NO TAX]**
 > # BUY? DM <@898406105762398239> <a:trustedseller:1222187904348983448>
-> **<a:arrow:1098931051046379611> IDR PAYMENT ONLY <a:indo:1213790198123470848> **
-> **<a:arrow:1098931051046379611> FAST RESPOND & DROP <a:verified:1176176963195510905>  **
-> **<a:arrow:1098931051046379611> ROLE GOD MAX <:god:1216550066626760784>**
+> **<a:arrowright21:1224977661672030239> IDR PAYMENT ONLY <a:flag_id:1224013007995273326>  **
+> **<a:arrowright21:1224977661672030239> FAST RESPOND & DROP <a:verified1:1224981671024136323> **
+> **<a:arrowright21:1224977661672030239> ROLE GOD MAX <:god:1222196157992800376> **
 > # <a:flash29:1222666884399497338>TOY STORE<a:flash29:1222666884399497338>
 > ----------------------------
 > || Always giveaway, check my profile !! || <@898406105762398239>
             `
           });
+
+          if (channel.channel_id === '1140403170267365517') {
+            payload = JSON.stringify({
+              content: `
+**SELL <a:bluegemlock:1224010170439303290> RATE DM !!
+SELL <a:blackgemlock:1224009228822380565> RATE DM !!
+SELL <:creativecoin:1224009642179428503> 16.000
+SELL <:Mray:1140501066811703366> 40.000
+IDR PAYMENT <a:indo:1213790198123470848> 
+<:dana:1224009791286935592> | <:gopay:1224982994700210196> | <:shopeepay:1224982990241665085> | <:jago:1224982992271708211> 
+BUY? DM <@898406105762398239>**
+              `
+            });
+          }
       
           const url = `https://discord.com/api/v9/channels/${channel.channel_id}/messages`;
           const headers = {
