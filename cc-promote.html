@@ -73,19 +73,21 @@
           const delayText = `${channel.delayMinutes} mins`;
       
           statusMessage.innerHTML = `Sending message to ${channel.name}... (Delay: ${delayText})`;
-          messageStatus.insertBefore(statusMessage, messageStatus.firstChild); // Tambahkan pesan baru di bagian atas
+          // messageStatus.insertBefore(statusMessage, messageStatus.firstChild); // Tambahkan pesan baru di bagian atas
       
           payload = JSON.stringify({
             content: `
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> ## <a:arrowright21:1224977661672030239>ALSO CHEAP <a:blackgemlock:1224009228822380565> DM RATE !!
-> ## <a:arrowright21:1224977661672030239>IDR PAYMENT <a:flag_id:1224013007995273326> DM <@898406105762398239>
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> ## <a:arrowright20:1227706948028338218> IDR PAYMENT <a:flag_id:1224013007995273326> DM <@898406105762398239>
             `
           });
 
@@ -93,16 +95,18 @@
           {
             payload = JSON.stringify({
               content: `
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> # <a:flash29:1222666884399497338> CHEAP CC <:creativecoin:1224009642179428503> AT <a:arrowright22:1224011662420345014> 4G
-> ## <a:arrowright21:1224977661672030239>SELL <a:blackgemlock:1224009228822380565> .6 HAVE TONS
-> ## <a:arrowright21:1224977661672030239>IDR PAYMENT <a:flag_id:1224013007995273326> DM <@898406105762398239>
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> # <a:flash29:1222666884399497338> CHEAP <:creativecoin:1224009642179428503> AT <a:arrowright20:1227706948028338218> 4G
+> ## <a:arrowright20:1227706948028338218> IDR PAYMENT <a:flag_id:1224013007995273326> DM <@898406105762398239>
               `
             });
           }
+
+          // > ## <a:arrowright21:1224977661672030239>SELL <a:blackgemlock:1224009228822380565> .6 HAVE TONS
+          // > ## <a:arrowright21:1224977661672030239>ALSO CHEAP <a:blackgemlock:1224009228822380565> DM RATE !!
       
           const url = `https://discord.com/api/v9/channels/${channel.channel_id}/messages`;
           const headers = {
@@ -140,16 +144,16 @@
           const channel = '1224492227078652014'
           let payload = JSON.stringify({
             content: `
-> ### <a:verified:1176176963195510905> Successfully sent to *${channel_name}* (Delay: ${delay}) | x${counter} times!
-> <a:arrow:1098931051046379611>report: *cc promote* <@898406105762398239>
+> ### <a:verified1:1224981671024136323> Successfully sent to *${channel_name}* (Delay: ${delay}) | x${counter} times!
+> <a:arrowright21:1224977661672030239> report: *cc promote* <@898406105762398239>
             `
           }); 
 
           if (status === false) {
             payload = JSON.stringify({
               content: `
-> ### <a:cross:1207285626257281034> Error sending to *${channel_name}* (Delay: ${delay}) | x${counter} times!
-> <a:arrow:1098931051046379611>report: *cc promote* <@898406105762398239>
+> ### <a:xocross:1225326244418158642> Error sending to *${channel_name}* (Delay: ${delay}) | x${counter} times!
+> <a:arrowright21:1224977661672030239> report: *cc promote* <@898406105762398239>
               `
             })
           }
