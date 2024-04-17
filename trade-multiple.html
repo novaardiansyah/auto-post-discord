@@ -58,7 +58,8 @@
           { channel_id: '1173287029606461560', name: 'CrapCP-Buy Sell', delayMinutes: 31 },
           { channel_id: '1208601553552801812', name: 'KfnCp', delayMinutes: 31 },
           { channel_id: '1130618760655544380', name: 'BuraaCp', delayMinutes: 31 },
-          { channel_id: '1140403170267365517', name: 'GMart-CPS Lock', delayMinutes: 121 }
+          { channel_id: '1140403170267365517', name: 'GMart-CPS Lock', delayMinutes: 121 },
+          { channel_id: '1216776630966554714', name: 'CPS-Mod Trade', delayMinutes: 11 } 
         ];
       
         let successCounter = {}; // Object untuk menyimpan counter sukses
@@ -93,7 +94,7 @@
 > ** <a:arrowright21:1224977661672030239> <:dana:1224009791286935592> DANA / <:gopay:1224982994700210196> GOPAY / <:shopeepay:1224982990241665085> SPAY**
 > ** <a:arrowright21:1224977661672030239> <:jago:1224982992271708211> JAGO / <:qris2:1224861080962990163> QRIS [ALL PAYMENT NO TAX]**
 > # BUY? DM <@898406105762398239> <a:trustedseller:1222187904348983448>
-> **<a:arrowright21:1224977661672030239> IDR PAYMENT ONLY <a:flag_id:1224013007995273326>  **
+> **<a:arrowright21:1224977661672030239> IDR PAYMENT ONLY <a:flag_id:1224013007995273326> **
 > **<a:arrowright21:1224977661672030239> FAST RESPOND & DROP <a:verified1:1224981671024136323> **
 > **<a:arrowright21:1224977661672030239> ROLE GOD MAX <:god:1222196157992800376> **
 > # <a:flash29:1222666884399497338> TOY STORE <a:flash29:1222666884399497338>
@@ -112,6 +113,16 @@ SELL <:Mray:1140501066811703366> 40.000
 IDR PAYMENT <a:indo:1213790198123470848> 
 <:dana:1224009791286935592> | <:gopay:1224982994700210196> | <:shopeepay:1224982990241665085> | <:jago:1224982992271708211> 
 BUY? DM <@898406105762398239>**
+              `
+            });
+          } else if (channel.channel_id === '1216776630966554714') {
+            // * CPS MOD TRADE 
+            payload = JSON.stringify({
+            content: `**> # <a:arrowright20:1227706948028338218> SELL <a:blackgemlock:1224009228822380565> .6 HAVE TONS
+> # <a:arrowright20:1227706948028338218> SELL <a:blackgemlock:1224009228822380565> .6 HAVE TONS
+> # <a:arrowright20:1227706948028338218> SELL <a:blackgemlock:1224009228822380565> .6 HAVE TONS
+> ##  VIA <:dana:1224009791286935592> / <:qris2:1224861080962990163> IDR PAYMENT ONLY <a:flag_id:1224013007995273326>
+> ##  BUY? DM <@898406105762398239>**
               `
             });
           }
